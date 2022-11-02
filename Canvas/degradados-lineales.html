@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		section{
+			width: 500px;
+			margin:auto;
+		}
+		/*#lienzo{
+			background-color: red;
+		}*/
+	</style>
+	<script type="text/javascript">
+		function comenzar(){
+			var elemento = document.getElementById("lienzo");
+			lienzo = elemento.getContext("2d");
+			//lienzo.createLinearGradient(esq izqX -,esq izqY |,esq derX -,esq derY |);
+
+			//de izquierda a derecha
+			//var degradado = lienzo.createLinearGradient(0,150,500,150);
+
+			//de la esquina Izquierda a esquina derecha
+			var degradado = lienzo.createLinearGradient(0,0,500,300);
+			degradado.addColorStop(0,"#F80606");
+
+			//degradado.addColorStop(0.8,"#F80606"); con esto el rojo ocupara el 80%
+
+			degradado.addColorStop(1,"green");
+
+			lienzo.fillStyle = degradado;
+
+			lienzo.fillRect(0,0,500,300);
+		}
+		window.addEventListener("load",comenzar,false);
+	</script>
+</head>
+<body>
+	<section id="dibujo">
+		<canvas id="lienzo" width="500" height="300">
+			Su navegador no soporta el elemento canvas
+		</canvas>
+	</section>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords" content="Diseño Gráfico, trabajos de diseño, servicios de diseño grafico">
+    <meta name="description" content="Diseño Gráfico Profesional, moderno y con buen estilo">
+    <meta name="owner" content="Eduardo Obreque">
+    <meta name="author" content="eduardobrequeh@hotmail.com">
+    <!--Para que la indexe rapidamente-->
+    <meta name="robots" content="index, follow">
+    <title>Proyecto Practico</title>
+    <script src="js/modernizr-custom.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fuentes.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/design.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            <figure>
+                <a href="index.html">
+                    <img src="img/icon.png" alt="Eduardo Obreque Logo">
+                </a>
+            </figure>
+            <a href="index.html">Eduardo Obreque</a>
+        </h1>
+        <!--io Convención para las cosas que se ocultan y se muestran-->
+        <nav id="ioMenu">
+            <figure id="showMenu" class="ioMenuMovil" onclick="displayMenu()">
+                M<img src="img/menu.svg" alt="Menu">NU
+            </figure>
+            <div id="card_menu">
+                <figure id="hideMenu" class="ioMenuMovil" onclick="displayMenu()">
+                    E<img src="img/exit.svg" alt="Menu">IT
+                </figure>
+                <figure id="logo_menu">
+                    <img src="img/Logo.png" alt="Logo">
+                </figure>
+                <ul>
+                    <li><a onclick="navSection('home')" href="#">Home</a></li>
+                    <li><a onclick="navSection('aboutme')" href="#">Sobre mi</a></li>
+                    <li><a onclick="navSection('skills')" href="#">Skills</a></li>
+                    <li><a onclick="navSection('portafolio')" href="#">Portafolio</a></li>
+                    <li><a onclick="navSection('blog')" href="#">Blog</a></li>
+                    <li><a onclick="displayFormContact('block')" href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="prev_section" onclick="displaySection('prev')"><img src="iconos/icon-08.svg" alt=""></div>
+        <div id="next_section" onclick="displaySection('next')"><img src="iconos/icon-08.svg" alt=""></div>
+    </header>
+
+    <div id="slider">
+        <section class="slide" id="home" style="display: block;">
+            <div class="mainanimation">
+                <h3>Para extraer el json necesitamos montar un webserver</h3>
+                <div id="particles-js"></div>
+            </div>
+
+            <div class="mainlogo">
+                <h2>Soy un <Strong>Ingeniero en Informática</Strong></h2>
+                <figure>
+                    <img src="img/Logo.png" alt="">
+                </figure>
+            </div>
+            <div class="buttonspage">
+                <div id="contratame" onclick="displayFormContact('block')">
+                    CONTRATAME
+                </div>
+                <a href="docs/curriculum-2020.docx">DESCARGAR CV</a>
+            </div>
+        </section>
+        <section class="slide" id="aboutme" style="display: none;"></section>
+        <section class="slide" id="skills" style="display: none;"></section>
+        <section class="slide" id="portafolio" style="display: none;"></section>
+        <section class="slide" id="blog" style="display: none;"></section>
+    </div>
+
+    <div id="contact_form">
+        <form action="contact.php" id="form1" name="form1" method="POST">
+            <figure id="logo_mensaje">
+                <img src="iconos/correo.svg" alt="">
+            </figure>
+            <div id="close_form" onclick="displayFormContact('none')">
+            </div>
+            <p>Dí Hola!</p>
+            <!--El evento onFocus se realizo para que sea compatible con otros navegadores-->
+            <input type="text" id="name" name="name" placeholder="Tu nombre"
+                onfocus="if(this.placeholder=='') this.placeholder='Tu nombre'">
+            <input type="text" id="email" name="email" placeholder="Tu email"
+                onfocus="if(this.placeholder=='') this.placeholder='Tu email'">
+            <textarea name="message" id="message" placeholder="Mensaje"
+                onfocus="if(this.placeholder=='') this.placeholder='Mensaje'"></textarea>
+            <input type="submit" name="Submit" id="button" value="ENVIAR">
+        </form>
+    </div>
+
+    <div id="contact_button" onclick="displayFormContact('block')">
+        <div id="plane_1"></div>
+        <div id="plane_2"></div>
+        <div id="plane_3"></div>
+        <div id="plane_5"></div>
+        <div id="plane_6"></div>
+    </div>
+
+    <footer>
+        <div class="rrss">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+        <p>&copy; All rights reserved Privaticity Policy</p>
+    </footer>
+
+    <script src="js/particles.js"></script>
+
+    <script>
+        var sections = new Array(5);
+        sections[0] = "home";
+        sections[1] = "aboutme";
+        sections[2] = "skills";
+        sections[3] = "portafolio";
+        sections[4] = "blog";
+
+        function displayMenu() {
+            var display;
+            var card_menu = document.getElementById("card_menu");
+            display = card_menu.style.display;
+            /*
+                card_menu.style.display es como si al elemento HTML 
+                se le agregara: style="display:none"
+                por eso es que la primera vez que se carga la página no
+                encuentra nada en el style.display
+            */
+            if (display == "none" || display == "") {
+                card_menu.style.display = "block";
+            } else {
+                card_menu.style.display = "none";
+            }
+        }
+
+        function displaySection(nav) {
+            var search;
+            var show;
+            let i;
+            for (i = 0; i < sections.length; i++) {
+                var search = document.getElementById(sections[i]);
+                show = search.style.display;
+
+                //si activa la desactivamos
+                if (show == "block") {
+                    search.style.display = "none";
+                    if (nav == "next") {
+                        i++;
+                        if (i > 4) i = 0;
+                    }
+                    if (nav == "prev") {
+                        i--;
+                        if (i < 0) i = 4;
+                    }
+
+                    //muestra la siguiente a previa
+                    search = document.getElementById(sections[i]);
+                    search.style.display = "block";
+                    //una vez que se encuentra se sale del for
+                    break;
+                }
+            }
+            setColors(i)
+
+        }
+
+        function displayFormContact(status) {
+            var form = document.getElementById("contact_form");
+            form.style.display = status;
+        }
+
+        function setColors(i) {
+            var search;
+            console.log(sections[i]);
+            if (sections[i] == "home") {
+                bkgr_body = "#233D58";
+                bkgr_menu = "#233D58";
+            } else {
+                bkgr_body = "#f1f1f1";
+                bkgr_menu = "#29abe2";
+            }
+
+            search = document.getElementById(sections[i]);
+            search.style.background = bkgr_body;
+            var menu = document.getElementsByTagName("header")[0];
+            menu.style.background = bkgr_menu;
+        }
+
+        function navSection(nav) {
+            var search;
+            var show;
+
+            var bkgr_body;
+            var bkgr_menu;
+
+            for (let i = 0; i < sections.length; i++) {
+                search = document.getElementById(sections[i]);
+                search.style.display = "none";
+
+                if (sections[i] == nav) {
+                    search.style.display = "block";
+
+                    setColors(i);
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

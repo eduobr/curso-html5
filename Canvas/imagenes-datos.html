@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#lienzo{
+			border:1px #033EFE solid;
+		}
+	</style>
+	<script>
+		function comenzar(){
+			var elemento=document.getElementById("lienzo");
+			lienzo = elemento.getContext("2d");
+			var imagen = new Image();
+			imagen.crossOrigin = 'Anonymous';
+			imagen.src = "../assets/mandala.png";
+			imagen.addEventListener("load",manipularimagen,false);
+
+		}
+
+		function manipularimagen(e){
+			imagen = e.target; //imagen del vanvas
+			lienzo.drawImage(imagen,0,0);
+			//almacena los pixeles(rgba) en una variable y la recortamos
+			var info_imagen=lienzo.getImageData(0,0,145,145);
+			var posicion;
+			for (var x=0; x<=145; x++) {
+				for (var y=0;y<=145;y++) {
+					posicion=(info_imagen.width*4*y)+(x*4);
+
+					//obtenemos un negativo del recorte en las 3 siguientes declaraciones
+					//rojo
+					info_imagen.data[posicion]=255-info_imagen.data[posicion];
+					//verde
+					info_imagen.data[posicion+1]=255-info_imagen.data[posicion+1];
+					//azul
+					info_imagen.data[posicion+2]=255-info_imagen.data[posicion+2];
+				}
+			}
+			lienzo.putImageData(info_imagen,0,0);
+		}
+
+		window.addEventListener("load",comenzar,false);
+	</script>
+</head>
+<body>
+	<section>
+		<canvas id="lienzo" width="1200" height="900">
+			
+		</canvas>
+	</section>
+</body>
+</html>

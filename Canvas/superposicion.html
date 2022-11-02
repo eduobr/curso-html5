@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#lienzo{
+			border:1px #033EFE solid;
+		}
+	</style>
+	<script>
+		function comenzar(){
+			var elemento=document.getElementById("lienzo");
+			lienzo = elemento.getContext("2d");
+			lienzo.fillStyle="#880000";
+			lienzo.fillRect(400,250,300,100);
+			//lienzo.globalCompositeOperation="destination-atop";
+			//lienzo.globalCompositeOperation="source-in";
+			lienzo.globalCompositeOperation="source-out";
+			lienzo.fillStyle="#AAAAFF";
+			lienzo.font="bold 80px verdana";
+			lienzo.textAlign="center";
+			lienzo.textBaseline="middle";//linea base del texto
+			lienzo.fillText("Hola Alumnos",550,300);
+
+		}
+		window.addEventListener("load",comenzar,false);
+	</script>
+</head>
+<body>
+	<section>
+		<canvas id="lienzo" width="1200" height="900">
+			
+		</canvas>
+	</section>
+</body>
+</html>

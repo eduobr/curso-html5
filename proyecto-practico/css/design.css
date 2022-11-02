@@ -1,0 +1,565 @@
+/*Mobile First - Todo lo del Body es para moviles, luego vienen las tablets y finalmente el PC*/
+
+body {
+    font-size: 16px;
+    font-family: 'Aldo';
+    position: relative;
+}
+
+header {
+    width: 100%;
+    height: 35px;
+    background: #233D58;
+    position: relative;
+}
+
+header h1 {
+    display: none;
+}
+
+header nav .ioMenuMovil {
+    height: 25px;
+    width: 125px;
+    cursor: pointer;
+    line-height: 40px;
+    margin: 0px 0px 0px 10px;
+    /*padding-top: 5px; */
+    /*Fuentes*/
+    font-size: 35px;
+    font-family: Aller;
+}
+
+header nav #showMenu {
+    color: white;
+}
+
+header nav #card_menu {
+    display: none;
+    position: relative;
+    width: 230px;
+    background: white;
+    top: -30px;
+    left: 0px;
+    border-right: 3px solid #AFAEAE;
+    /*Para que el elemento se visualice*/
+    z-index: 999;
+    padding-bottom: 50px;
+}
+
+header nav #card_menu #logo_menu {
+    width: 80%;
+    margin: 30px 0px;
+    margin-left: 10%;
+    margin-bottom: 50px;
+}
+
+header nav #card_menu #logo_menu img {
+    width: 100%;
+}
+
+header nav #card_menu ul {
+    margin-top: -20px;
+}
+
+header nav #card_menu ul li {
+    list-style: none;
+    font-size: 1.5em;
+    line-height: 37px;
+}
+
+header nav #card_menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+header nav .ioMenuMovil img {
+    height: 100%;
+}
+
+header #prev_section, header #next_section {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    /*overflow: hidden;*/
+    margin: 5px;
+    position: absolute;
+    top: 0px;
+}
+
+header #prev_section {
+    right: 35px;
+}
+
+header #next_section {
+    right: 5px;
+}
+
+header #next_section img, header #prev_section img {
+    width: 120%;
+    top: -2px;
+    position: relative;
+}
+
+header #prev_section img {
+    transform: rotate(180deg);
+}
+
+#slider {
+    width: 100%;
+    position: relative;
+    height: 600px;
+    background: black;
+}
+
+#slider section .slide {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+#slider #home {
+    background: #233D58;
+    font-family: 'Aller';
+    position: relative;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+#slider #home .mainanimation {
+    width: 80%;
+    margin-left: 10%;
+    min-height: 300px;
+    position: absolute;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: none;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+#slider #home .mainlogo {
+    background: none;
+    position: relative;
+    /*para que tenga un 60% de anchura
+    del dispositivo*/
+    width: 60vw;
+    margin-left: 20vw;
+    min-height: 430px;
+}
+
+#slider #home .mainlogo h2 {
+    font-size: 1.2em;
+    padding-top: 80px;
+    color: white;
+    font-weight: lighter;
+    margin: 0px;
+}
+
+#slider #home .mainlogo h2 strong {
+    font-size: 2em;
+    font-family: 'Aldo';
+    display: block;
+}
+
+#slider #home .mainlogo figure, #slider #home .mainlogo figure img {
+    width: 100%;
+    margin: 0px;
+}
+
+#slider #home .buttonspage {
+    width: 100%;
+}
+
+#slider #home .buttonspage>* {
+    display: inline-block;
+    width: 40%;
+    margin: 5px 1.5%;
+    color: white;
+    padding: 15px 1.5%;
+}
+
+#slider #home #contratame {
+    cursor: pointer;
+    background: #F8931F;
+}
+
+#slider #home a {
+    text-decoration: none;
+    background: #29abe2;
+}
+
+#slider #aboutme {
+    height: 400px;
+    background: yellow;
+}
+
+#slider #skills {
+    height: 300px;
+    background: red;
+}
+
+#slider #portafolio {
+    height: 200px;
+    background: blue;
+}
+
+#slider #blog {
+    height: 100px;
+    background: purple;
+}
+
+#contact_form {
+    position: absolute;
+    right: 0px;
+    top: 35px;
+    background: white;
+    width: 250px;
+    border-top: 1px solid black;
+    box-shadow: 0px 0px 3px #9F9E9E;
+    font-family: 'Aller';
+    /*Esto es para que tenga el la altura
+    del 100% del dispositivo que se este visualizando*/
+    height: 100vh;
+    z-index: 999;
+    display: none;
+}
+
+#contact_form #close_form {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 85%;
+    top: 190px;
+}
+
+#contact_form #close_form:hover {
+    cursor: pointer;
+}
+
+#contact_form #close_form:before {
+    position: relative;
+    font-family: 'icomoon';
+    content: '\ea0f';
+    top: 5px;
+    left: 9px;
+}
+
+#contact_form figure {
+    height: 180px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    background-color: #29abe2;
+}
+
+#contact_form figure img {
+    height: 100%;
+    margin: 0px;
+}
+
+#contact_form p {
+    margin: 20px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#contact_form input, #contact_form textarea {
+    display: block;
+    margin: 20px;
+    border: none;
+    border-bottom: 2px solid gray;
+    width: 90%;
+    margin-left: 5%;
+    padding-bottom: 3px;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+#contact_form #button {
+    background: #F8931F;
+    color: white;
+    border: none;
+    padding: 8px 0px;
+    border-radius: 5px;
+}
+
+#contact_button {
+    width: 60px;
+    height: 60px;
+    background: #F8931F;
+    border-radius: 50%;
+    color: white;
+    z-index: 95;
+    position: fixed;
+    right: 10px;
+    top: 80vh;
+}
+
+#contact_button {
+    cursor: pointer;
+    font-family: 'icomoon';
+    font-size: 2.9em;
+}
+
+#contact_button div {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+#plane_1:before {
+    content: '\e900';
+}
+
+#plane_2:before {
+    content: '\e901';
+}
+
+#plane_3:before {
+    content: '\e902';
+}
+
+#plane_5:before {
+    content: '\e904';
+}
+
+#plane_6:before {
+    content: '\e905';
+}
+
+footer {
+    width: 100%;
+    background: black;
+    color: white;
+    text-align: center;
+    z-index: 90;
+    height: 150px;
+    bottom: -110px;
+    position: fixed;
+    transition-duration: 0.4s;
+}
+
+footer:hover {
+    bottom: 0px;
+}
+
+footer::after {
+    content: '\e906';
+    font-family: 'icomoon';
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background: orange;
+    margin-left: -40px;
+    margin-top: -40px;
+    border-radius: 50%;
+    background: black;
+    /*ocultamos la flecha horizontal*/
+    color: black;
+    transform: rotate(270deg);
+    font-size: 4.5em;
+    transition-duration: 0.4s;
+    /*crea una replica de la flecha*/
+    text-shadow: 15px 0px 1px white;
+    /*El truco anterior sirve para posicionar la flecha*/
+}
+
+footer:hover::after {
+    margin-top: -40px;
+    transform: rotate(90deg);
+    color: black;
+    background: white;
+}
+
+footer .rrss {
+    margin-top: 70px;
+    width: 100%;
+    height: 40px;
+    background: white;
+}
+
+footer .rrss a {
+    width: 40px;
+    height: 40px;
+    background: green;
+    display: inline-block;
+    position: relative;
+}
+
+footer .rrss a::before {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    font-size: 2em;
+    top: 5px;
+    left: 5px;
+    font-family: 'icomoon';
+}
+
+/*Faltan agregar todos los botones de las redes sociales*/
+
+footer .rrss a:nth-child(1)::before {
+    content: '\e602';
+}
+
+/*--------------------------------------------------------*/
+
+footer p {
+    font-size: 0.7em;
+    font-weight: lighter;
+    font-family: 'Aller';
+}
+
+@media screen and (min-width:480px) {
+    #slider #home .mainlogo {
+        width: 270px;
+        /*Lo posicionamos a la mitad*/
+        left: 50%;
+        /*le quitamos la mitad de lo que 
+        ocupa para que el elemento quede centrado*/
+        margin-left: -135px;
+        padding-bottom: 50px;
+    }
+    #slider #home .mainlogo h2 {
+        font-size: 1.4em;
+    }
+    #slider #home .mainlogo figure {
+        width: 80%;
+        margin-left: 10%;
+    }
+    #slider #home .buttonspage>* {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width:767px) {
+    body {
+        background-color: orange;
+    }
+    header {
+        height: 50px;
+    }
+    header h1 {
+        display: inline-block;
+        margin: 0px;
+        height: 50px;
+        margin-left: 80px;
+        /*si al line-height le colocamos la
+        misma altura que el elemento padre, el
+        texto queda centrado*/
+        line-height: 50px;
+        /*en caso de que en algunos dispositivos
+        el 20% sea muy pequeño*/
+        min-width: 200px;
+    }
+    header h1>* {
+        display: inline-block;
+        vertical-align: middle;
+        text-decoration: none;
+        color: white;
+        font-size: 0.8em;
+        margin: 0px 3px;
+    }
+    header h1 figure {
+        height: 40px;
+        width: 40px;
+    }
+    header h1 figure img {
+        width: 100%;
+    }
+    header nav {
+        display: inline-block;
+        vertical-align: middle;
+        width: 62%;
+        position: relative;
+    }
+    /* en caso de que la img del menu se vea muy abajo
+    header nav #showMenu img{
+        position: absolute;
+    }
+    */
+    header nav #showMenu, header nav #hideMenu {
+        display: none;
+    }
+    header nav #card_menu {
+        display: inline-block;
+        border: none;
+        background: none;
+        position: relative;
+        top: 0px;
+        width: 100%;
+        text-align: right;
+        padding-bottom: 0px;
+    }
+    header nav #card_menu figure {
+        display: none;
+    }
+    header nav #card_menu ul {
+        padding: 0px;
+        margin: 0px;
+        margin-top: -15px;
+    }
+    header nav #card_menu ul li {
+        display: inline-block;
+        width: 75px;
+        text-align: center;
+        font-size: 1.2em;
+        margin: 0px -2px;
+    }
+    header nav #card_menu ul li a {
+        color: white;
+    }
+    header #next_section, header #prev_section {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: white;
+        right: 40px;
+        z-index: 999;
+        /*con el 50% ocupa el 50% del lateral*/
+        border-radius: 50%;
+    }
+    header #next_section {
+        top: 115px;
+    }
+    header #prev_section {
+        top: 190px;
+    }
+    header #next_section img, header #prev_section img {
+        width: 50%;
+        /*al tener una anchura de 100% el top:0 y
+        el left:0 hace que quede centrado*/
+        top: 25%;
+        left: 25%;
+    }
+    #contact_form {
+        top: 50px;
+        width: 400px;
+    }
+    #contact_button {
+        right: 20px;
+    }
+}
+
+@media screen and (min-width:950px) {
+    body {
+        background-color: green;
+    }
+}

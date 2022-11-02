@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Imagenes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <div id="img"><img src="imagenes/dayz_wallpaper__1920_1080__by_grimsonfart-d5a09mu.jpg" width="450" height="350" alt="dayz"/></div>
+        <input type="button" value="boton1" onmouseover="rollOver(this.value)">
+        <input type="button" value="boton2" onmouseover="rollOver(this.value)">
+        <input type="button" value="boton3" onmouseover="rollOver(this.value)">
+
+        <script type="text/javascript">
+            function rollOver(value) {
+                this.value = value;
+                if (this.value=="boton1") {
+                    document.getElementById("img").innerHTML = "<img src='imagenes/dayz_wallpaper__1920_1080__by_grimsonfart-d5a09mu.jpg' width='450' height='350' alt='dayz'/>";
+                }
+                if (this.value=="boton2") {
+                    document.getElementById("img").innerHTML = "<img src='imagenes/dayz_screenshot_wallpapers_by_suzuki88-d5ecqup.jpg' width='450' height='350' alt='dayz2'/>";
+                }
+                if (this.value=="boton3") {
+                    document.getElementById("img").innerHTML = "<img src='imagenes/day_z_perro.jpg' width='450' height='350' alt='dayz3'/>";
+                }
+            }
+        </script>
+    </body>
+</html>

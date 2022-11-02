@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function comenzar(){
+			var elemento = document.getElementById("lienzo");
+			lienzo = elemento.getContext("2d");
+			lienzo.font="bold 20px verdana";
+			lienzo.fillText("Hola alumnos",50,20);
+			lienzo.translate(100,100);//trasladamos el eje de coordenadas de inicio
+			lienzo.scale(3,1)//en el eje X tiene que ser el triple y el eje Y queda igual
+			lienzo.fillText("Hola alumnos",50,20);
+			lienzo.rotate(Math.PI)//se especifica los grados en radianes
+			lienzo.scale(2,2)
+			lienzo.fillText("Hola alumnos",-150,-150);
+		}
+		window.addEventListener("load",comenzar,false);
+	</script>
+</head>
+<body>
+	<section>
+		<canvas id="lienzo" width="1200" height="900"></canvas>
+	</section>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+		#lienzo{
+			border: 1px solid #F40B0B;
+		}
+	</style>
+	<script type="text/javascript">
+		function comenzar(){
+			var elemento=document.getElementById("lienzo");
+			lienzo=elemento.getContext("2d");
+			lienzo.beginPath();
+			/*-los dos primeros parametros es dónde se posiciona el centro del circulo
+			  -el segundo parametro es el radio del circulo
+			  -los dos siguientes parametros hacen referencia al angulo que quermos establecer
+			   dentro del circulo y se miden en radianes
+			   despues le decimos que empieze en un angulo 0 y que termine en un angulo de 1 radial*/
+			lienzo.arc(100,100,50,0,Math.PI,false);//en false nos devuelve solo el arco
+
+			//lienzo.moveTo(300,200);
+
+			/*los primeros parametros son el punto de control y los dos ultimos parametros
+			  son el punto final del trazado*/
+			//lienzo.quadraticCurveTo(350,0,400,200);
+
+			lienzo.moveTo(250,50);
+
+			// este metodo cuenta con 2 puntos de control
+			lienzo.bezierCurveTo(200,125,300,125,250,200);
+
+			lienzo.stroke();
+		}
+		window.addEventListener("load",comenzar,false);
+	</script>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<section>
+		<canvas width="500" height="300" id="lienzo">
+			Su navegador no admite el elemento Canvas
+		</canvas>
+	</section>
+</body>
+</html>

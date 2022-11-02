@@ -1,0 +1,48 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09-03-2016, 17:23:14
+    Author     : Eduardo
+*/
+body{
+    background-image: url(../objetos/fondo.jpg);
+}
+table{
+    border-color: black; border-spacing: 0px;
+}
+td{
+    background-color: lightblue; padding: 5px; border: black 1px solid; border-collapse: collapse;
+    
+}
+caption{
+    font-size: 20px;
+}
+//Gestores de Eventos
+#alternador{
+    text-align: center;
+    background-color: darkorange;
+    width: 550px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.boton{
+    float: left;
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;    
+    background-color: activeborder;
+    
+}
+#alternador .hover{
+    cursor: pointer;
+    border:1px solid;
+    color: darkorange;
+    background-color: deepskyblue;
+}
+.seleccionado{
+    font-weight: bold;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#lienzo{
+			border:1px #033EFE solid;
+		}
+	</style>
+	<script>
+		function comenzar(){
+			var elemento=document.getElementById("lienzo");
+			lienzo = elemento.getContext("2d");
+			var imagen = new Image();
+			imagen.src = "https://image.flaticon.com/icons/png/128/323/323422.png";
+			imagen.addEventListener("load",function (){
+				//lienzo.drawImage(imagen,250,300);
+				//lienzo.drawImage(imagen,250,300,400,350);
+				//lienzo.drawImage(imagen,0,0,elemento.width,elemento.height);
+
+				/*
+					50,10 donde se empieza a recortar la imagen
+					75,75 tamaño de la imagen
+					0,0 dónde se dibuja la imagen
+					300,300 tamaño final del recorte 
+				*/
+				lienzo.drawImage(imagen,50,10,75,75,0,0,300,300);
+			},false);
+
+		}
+		window.addEventListener("load",comenzar,false);
+	</script>
+</head>
+<body>
+	<section>
+		<canvas id="lienzo" width="1200" height="900">
+			
+		</canvas>
+	</section>
+</body>
+</html>

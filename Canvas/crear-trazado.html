@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#lienzo{
+			border:1px #033EFE solid;
+		}
+	</style>
+	<script>
+		function comenzar(){
+			var elemento=document.getElementById("lienzo");
+			lienzo = elemento.getContext("2d");
+			lienzo.beginPath();
+			//            x  ,y
+			lienzo.moveTo(100,200);
+			lienzo.lineTo(200,200);
+			lienzo.lineTo(150,150);
+			lienzo.lineTo(100,200);
+			lienzo.closePath();
+			//hacemos que el triangulo sea una mascara
+			lienzo.clip();//al ser una mascara lo siguiente que dibujemos
+			              //solo aparecera lo que este dentro del triangulo
+			lienzo.stroke(); //stroke dibuja una figura vacia
+			//lienzo.fill(); //fill dibuja una figura con color
+			lienzo.beginPath();
+			for (var i = 0 ; i <250; i+=10) {
+				lienzo.moveTo(0,i);
+				lienzo.lineTo(500,i);
+			}
+			lienzo.stroke();
+
+		}
+		window.addEventListener("load",comenzar,false);
+	</script>
+</head>
+<body>
+	<section>
+		<canvas id="lienzo" width="500" height="300">
+			
+		</canvas>
+	</section>
+</body>
+</html>

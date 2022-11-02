@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		section{
+			width: 500px;
+			margin:auto;
+		}
+		/*#lienzo{
+			background-color: red;
+		}*/
+	</style>
+	<script type="text/javascript">
+		function comenzar(){
+			var elemento = document.getElementById("lienzo");
+			lienzo = elemento.getContext("2d");
+			
+			//lienzo.createRadialGradient(x1,y1,r1,x2,y2,r2);
+			var degradado = lienzo.createRadialGradient(250,150,50,250,150,300);
+			degradado.addColorStop(0,"#F80606");
+
+			degradado.addColorStop(1,"green");
+
+			lienzo.fillStyle = degradado;
+
+			lienzo.fillRect(0,0,500,300);
+		}
+		window.addEventListener("load",comenzar,false);
+	</script>
+</head>
+<body>
+	<section id="dibujo">
+		<canvas id="lienzo" width="500" height="300">
+			Su navegador no soporta el elemento canvas
+		</canvas>
+	</section>
+</body>
+</html>
